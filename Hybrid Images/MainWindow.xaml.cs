@@ -37,13 +37,13 @@ namespace Hybrid_Images
             string storepath;
             storepath = chooseimage(sender, e);
        
-            if (storepath != "")
+            if (storepath == "")
             {
-               Hybrid.instance.img1 = new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
+                return;
             }
-
+            Hybrid.instance.img1 = new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
             img1.Source = Hybrid.instance.MatToBitmapImage(Hybrid.instance.img1);
-            if (Hybrid.instance.img1 != null)
+            if (Hybrid.instance.img2 != null)
             {
                 Hybrid.instance.caculate();
                 imgDst.Source = Hybrid.instance.img_tar;
@@ -55,13 +55,13 @@ namespace Hybrid_Images
         {
             string storepath;
             storepath = chooseimage(sender, e);
-            if (storepath != "")
+            if (storepath == "")
             {
-                Hybrid.instance.img2= new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
+                return;
             }
-
+            Hybrid.instance.img2= new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
             img2.Source = Hybrid.instance.MatToBitmapImage(Hybrid.instance.img2);
-            if (Hybrid.instance.img2 != null)
+            if (Hybrid.instance.img1 != null)
             {
                 Hybrid.instance.caculate();
                 imgDst.Source= Hybrid.instance.img_tar;
@@ -70,6 +70,10 @@ namespace Hybrid_Images
 
         private void switch_click(object sender, RoutedEventArgs e)
         {
+            if (Hybrid.instance.img1 == null || Hybrid.instance.img2 == null)
+            {
+                return;
+            }
             Mat temp = Hybrid.instance.img2;
             Hybrid.instance.img2 = Hybrid.instance.img1;
             Hybrid.instance.img1 = temp;

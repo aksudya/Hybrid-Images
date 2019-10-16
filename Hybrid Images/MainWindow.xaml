@@ -16,8 +16,8 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Name="img1" HorizontalAlignment="Left" Height="200" Margin="67.861,41.01,0,0" VerticalAlignment="Top" Width="300"/>
-            <Image Name="img2" HorizontalAlignment="Left" Height="200" Margin="67.861,36.69,0,0" VerticalAlignment="Top" Width="300" Grid.Row="1"/>
+            <Image Name="img1" Height="200" Margin="75.56,41.01,24.44,44.323" Width="300" RenderTransformOrigin="0.5,0.5" Source="/resource/image.png"/>
+            <Image Name="img2" Height="200" Margin="75.56,38.874,24.44,46.459" Width="300" Grid.Row="1" Source="/resource/image.png"/>
             <Label Content="1" HorizontalAlignment="Left" Height="46.689" Margin="17.184,88.131,0,0" VerticalAlignment="Top" Width="33.108" FontWeight="Bold" FontSize="20"/>
             <Label Content="2" HorizontalAlignment="Left" Height="46.689" Margin="17.184,105.36,0,0" VerticalAlignment="Top" Width="33.108" FontWeight="Bold" FontSize="20" Grid.Row="1"/>
             <Button x:Name="Btn_img1" Content="选择图片" HorizontalAlignment="Left" Height="30.24" Margin="142.054,246.01,0,0" VerticalAlignment="Top" Width="159.821" FontWeight="Bold" FontSize="16" Cursor="Hand" Click="img1_click"/>
@@ -26,14 +26,14 @@
                 <Image Source="/resource/switch.png" Height="71.259" Width="28.108"/>
             </Button>
 
-        </Grid> 
+        </Grid>
         <Label x:Name="frequent_lable" Content="" Grid.Column="1" HorizontalAlignment="Left" Height="23.387" Margin="410.55,444.154,0,0" VerticalAlignment="Top" Width="64.666" FontWeight="Bold"/>
         <Label x:Name="ksize_lable" Content="" Grid.Column="1" HorizontalAlignment="Left" Height="23.387" Margin="410.55,474.241,0,0" VerticalAlignment="Top" Width="64.666" FontWeight="Bold"/>
-        <Image Name="imgDst" Grid.Column="1" HorizontalAlignment="Left" Height="374.667" Margin="17.5,26.987,0,0" VerticalAlignment="Top" Width="562"/>
+        <Image Name="imgDst" Grid.Column="1" Height="374.667" Margin="10,45.498,21.333,150.501" Width="562" Source="/resource/image.png"/>
         <Slider Name="frequent" Grid.Column="1" HorizontalAlignment="Left" Margin="228.015,448.486,0,0" VerticalAlignment="Top" Height="23.387" Width="177.535" IsSnapToTickEnabled="True" Maximum="50" ValueChanged="fre_change" LargeChange="0.1" TickFrequency="0.1" Minimum="0.1" />
         <Label Content="截止频率" Grid.Column="1" HorizontalAlignment="Left" Height="23.387" Margin="159.064,444.154,0,0" VerticalAlignment="Top" Width="59.333" FontWeight="Bold"/>
         <Slider Name="ksize" Grid.Column="1" HorizontalAlignment="Left" Margin="228.015,476.873,0,0" VerticalAlignment="Top" Height="23.387" Width="177.535" IsSnapToTickEnabled="True" Maximum="50" Minimum="1" LargeChange="2" SmallChange="2" ValueChanged="ksize_change" Value="1" />
         <Label Content="半径" Grid.Column="1" HorizontalAlignment="Left" Height="23.387" Margin="159.064,472.541,0,0" VerticalAlignment="Top" Width="59.333" FontWeight="Bold"/>
-       
+
     </Grid>
 </Window>
