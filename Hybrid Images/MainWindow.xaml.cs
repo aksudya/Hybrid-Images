@@ -41,8 +41,17 @@ namespace Hybrid_Images
             {
                 return;
             }
-            Hybrid.instance.img1 = new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
+            Mat temp = new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
+            //Hybrid.instance.img1 = new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
+            if (!Hybrid.instance.check(temp, Hybrid.instance.img2))
+            {
+                MessageBox.Show("尺寸不对！");
+                return;
+            }
+
+            Hybrid.instance.img1 = temp;
             img1.Source = Hybrid.instance.MatToBitmapImage(Hybrid.instance.img1);
+
             if (Hybrid.instance.img2 != null)
             {
                 Hybrid.instance.caculate();
@@ -59,7 +68,15 @@ namespace Hybrid_Images
             {
                 return;
             }
-            Hybrid.instance.img2= new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
+            //Hybrid.instance.img2= new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
+            Mat temp= new Mat(@storepath, ImreadModes.AnyColor | ImreadModes.AnyDepth);
+            if (!Hybrid.instance.check(temp,Hybrid.instance.img1))
+            {
+                MessageBox.Show("尺寸不对！");
+                return;
+            }
+
+            Hybrid.instance.img2 = temp;
             img2.Source = Hybrid.instance.MatToBitmapImage(Hybrid.instance.img2);
             if (Hybrid.instance.img1 != null)
             {
@@ -83,6 +100,19 @@ namespace Hybrid_Images
 
             Hybrid.instance.caculate();
             imgDst.Source = Hybrid.instance.img_tar;
+            if (Hybrid.instance.cur_select==1)
+            {
+                 imgDst_possin.Source = Hybrid.instance.img_tar1;
+            }
+            if (Hybrid.instance.cur_select == 2)
+            {
+                imgDst_possin.Source = Hybrid.instance.img_tar2;
+            }
+            if (Hybrid.instance.cur_select == 3)
+            {
+                imgDst_possin.Source = Hybrid.instance.img_tar3;
+            }
+
         }
 
         private string chooseimage(object sender, RoutedEventArgs e)
@@ -122,6 +152,58 @@ namespace Hybrid_Images
             }
 
             ksize_lable.Content = Hybrid.instance.ksize.ToString();
+        }
+
+
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            Hybrid.instance.clear();
+            img1.Source = new BitmapImage(new Uri("pack://application:,,,/resource/image.png"));
+            img2.Source = new BitmapImage(new Uri("pack://application:,,,/resource/image.png"));
+            imgDst.Source= new BitmapImage(new Uri("pack://application:,,,/resource/image.png"));
+            imgDst_possin.Source = new BitmapImage(new Uri("pack://application:,,,/resource/image.png"));
+        }
+
+        private void Mixed_Click(object sender, RoutedEventArgs e)
+        {
+            imgDst_possin.Source = Hybrid.instance.img_tar1;
+            Hybrid.instance.cur_select = 1;
+        }
+
+        private void Monochrome_Click(object sender, RoutedEventArgs e)
+        {
+            imgDst_possin.Source = Hybrid.instance.img_tar2;
+            Hybrid.instance.cur_select = 2;
+        }
+
+        private void Normal_Click(object sender, RoutedEventArgs e)
+        {
+            imgDst_possin.Source = Hybrid.instance.img_tar3;
+            Hybrid.instance.cur_select = 3;
+        }
+
+        private void psize_change(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Hybrid.instance.psize = (1- psize.Value) / 2;
+            if (Hybrid.instance.img1 != null && Hybrid.instance.img2 != null)
+            {
+                Hybrid.instance.possin();
+                if (Hybrid.instance.cur_select == 1)
+                {
+                    imgDst_possin.Source = Hybrid.instance.img_tar1;
+                }
+                if (Hybrid.instance.cur_select == 2)
+                {
+                    imgDst_possin.Source = Hybrid.instance.img_tar2;
+                }
+                if (Hybrid.instance.cur_select == 3)
+                {
+                    imgDst_possin.Source = Hybrid.instance.img_tar3;
+                }
+            }
+
+            psize_label.Content =psize.Value;
+
         }
     }
 }
