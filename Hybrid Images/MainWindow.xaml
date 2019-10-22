@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hybrid_Images"
         mc:Ignorable="d"
-        Title="MainWindow" Width="800" ResizeMode="NoResize" Height="1000">
+        Title="MainWindow" Width="800" ResizeMode="NoResize" Height="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="300"/>
@@ -37,24 +37,24 @@
             <Button Content="清除" HorizontalAlignment="Left" Margin="352.684,18.391,0,0" VerticalAlignment="Top" Width="87" Height="35.443" Click="clear_Click" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="14"/>
 
         </Grid>
-        <Label x:Name="frequent_lable" Content="" HorizontalAlignment="Left" Height="23.387" Margin="679.653,326.695,0,0" VerticalAlignment="Top" Width="64.666" FontWeight="Bold" Grid.Row="1"/>
-        <Label x:Name="ksize_lable" Content="" HorizontalAlignment="Left" Height="24" Margin="325,322,0,0" VerticalAlignment="Top" Width="64" FontWeight="Bold" Grid.Row="1"/>
-        <Image Name="imgDst" Margin="340.853,26.415,24.897,359.918" Source="/resource/image.png" Grid.Row="1"/>
-        <Slider Name="frequent" HorizontalAlignment="Left" Margin="477.118,326.695,0,0" VerticalAlignment="Top" Height="23.387" Width="177.535" IsSnapToTickEnabled="True" Maximum="50" ValueChanged="fre_change" LargeChange="0.1" TickFrequency="0.1" Minimum="0.1" Grid.Row="1" />
-        <Label Content="截止频率" HorizontalAlignment="Left" Height="23.387" Margin="399.167,322.363,0,0" VerticalAlignment="Top" Width="59.333" FontWeight="Bold" Grid.Row="1"/>
-        <Slider Name="ksize" HorizontalAlignment="Left" Margin="142,322,0,0" VerticalAlignment="Top" Height="24" Width="178" IsSnapToTickEnabled="True" Maximum="50" Minimum="1" LargeChange="2" SmallChange="2" ValueChanged="ksize_change" Value="1" Grid.Row="1" />
-        <Label Content="半径" HorizontalAlignment="Left" Height="24" Margin="64,322,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold" Grid.Row="1"/>
-        <Button Content="MixedClone" HorizontalAlignment="Left" Margin="99.167,456.582,0,0" VerticalAlignment="Top" Width="151" Height="22" Click="Mixed_Click" FontWeight="Bold" Grid.Row="1"/>
-        <Label Content="hybrid image" HorizontalAlignment="Left" Height="46.689" Margin="99.167,145.129,0,0" VerticalAlignment="Top" Width="163.735" FontWeight="Bold" FontSize="20" Grid.Row="1"/>
-        <Image x:Name="imgDst_possin" Margin="340.853,376.333,24.897,10" Source="resource/image.png" Grid.Row="1"/>
-        <Button Content="MonochromeTransfer" HorizontalAlignment="Left" Margin="99.167,503.082,0,0" VerticalAlignment="Top" Width="151" Height="22" Click="Monochrome_Click" FontWeight="Bold" Grid.Row="1"/>
-        <Button Content="NormalClone" HorizontalAlignment="Left" Margin="99.167,551.082,0,0" VerticalAlignment="Top" Width="151" Height="22" Click="Normal_Click" FontWeight="Bold" Grid.Row="1"/>
-        <Label Content="     泊松融合" HorizontalAlignment="Left" Height="46.689" Margin="99.167,388.393,0,0" VerticalAlignment="Top" Width="163.735" FontWeight="Bold" FontSize="20" Grid.Row="1"/>
-        <Rectangle Fill="#FF575757" HorizontalAlignment="Left" Height="8" Margin="0,358.082,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="795"/>
+        <Label x:Name="frequent_lable" Content="" HorizontalAlignment="Left" Height="22" Margin="680,252,0,0" VerticalAlignment="Top" Width="64" FontWeight="Bold" Grid.Row="1"/>
+        <Label x:Name="ksize_lable" Content="" HorizontalAlignment="Left" Height="24" Margin="325,246,0,0" VerticalAlignment="Top" Width="64" FontWeight="Bold" Grid.Row="1"/>
+        <Image Name="imgDst" Margin="447,26,25,0" Source="/resource/image.png" Grid.Row="1" Height="215" VerticalAlignment="Top"/>
+        <Slider Name="frequent" HorizontalAlignment="Left" Margin="477,252,0,0" VerticalAlignment="Top" Height="22" Width="178" IsSnapToTickEnabled="True" Maximum="50" ValueChanged="fre_change" LargeChange="0.1" TickFrequency="0.1" Minimum="0.1" Grid.Row="1" />
+        <Label Content="截止频率" HorizontalAlignment="Left" Height="24" Margin="399,246,0,0" VerticalAlignment="Top" Width="59" FontWeight="Bold" Grid.Row="1"/>
+        <Slider Name="ksize" HorizontalAlignment="Left" Margin="142,246,0,0" VerticalAlignment="Top" Height="24" Width="178" IsSnapToTickEnabled="True" Maximum="50" Minimum="1" LargeChange="2" SmallChange="2" ValueChanged="ksize_change" Value="1" Grid.Row="1" />
+        <Label Content="半径" HorizontalAlignment="Left" Height="24" Margin="64,246,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold" Grid.Row="1"/>
+        <Button Content="MixedClone" HorizontalAlignment="Left" Margin="99,386,0,0" VerticalAlignment="Top" Width="151" Height="22" Click="Mixed_Click" FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="hybrid image" HorizontalAlignment="Left" Height="47" Margin="99,118,0,0" VerticalAlignment="Top" Width="164" FontWeight="Bold" FontSize="20" Grid.Row="1"/>
+        <Image x:Name="imgDst_possin" Margin="399,306,25,0" Source="resource/image.png" Grid.Row="1" Height="246" VerticalAlignment="Top"/>
+        <Button Content="MonochromeTransfer" HorizontalAlignment="Left" Margin="99,432,0,0" VerticalAlignment="Top" Width="151" Height="22" Click="Monochrome_Click" FontWeight="Bold" Grid.Row="1"/>
+        <Button Content="NormalClone" HorizontalAlignment="Left" Margin="99,480,0,0" VerticalAlignment="Top" Width="151" Height="22" Click="Normal_Click" FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="     泊松融合" HorizontalAlignment="Left" Height="46" Margin="99,318,0,0" VerticalAlignment="Top" Width="164" FontWeight="Bold" FontSize="20" Grid.Row="1"/>
+        <Rectangle Fill="#FF575757" HorizontalAlignment="Left" Height="8" Margin="0,282,-1,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="795"/>
         <Rectangle Fill="#FF575757" HorizontalAlignment="Left" Height="8" Margin="-0.5,5,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="795"/>
-        <Label x:Name="psize_label" Content="" HorizontalAlignment="Left" Height="24" Margin="276.853,608.5,0,0" VerticalAlignment="Top" Width="64" FontWeight="Bold" Grid.Row="1"/>
-        <Slider x:Name="psize" HorizontalAlignment="Left" Margin="93.853,608.5,0,0" VerticalAlignment="Top" Height="24" Width="178" IsSnapToTickEnabled="True" Maximum="0.99" LargeChange="0.1" ValueChanged="psize_change" Value="0.1" Grid.Row="1" TickFrequency="0.1" Minimum="0.01" />
-        <Label Content="半径" HorizontalAlignment="Left" Height="24" Margin="28.853,608.5,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold" Grid.Row="1"/>
+        <Label x:Name="psize_label" Content="" HorizontalAlignment="Left" Height="24" Margin="277,538,0,0" VerticalAlignment="Top" Width="64" FontWeight="Bold" Grid.Row="1"/>
+        <Slider x:Name="psize" HorizontalAlignment="Left" Margin="94,538,0,0" VerticalAlignment="Top" Height="24" Width="178" IsSnapToTickEnabled="True" Maximum="0.99" LargeChange="0.1" ValueChanged="psize_change" Value="0.1" Grid.Row="1" TickFrequency="0.1" Minimum="0.01" />
+        <Label Content="半径" HorizontalAlignment="Left" Height="24" Margin="29,538,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold" Grid.Row="1"/>
 
     </Grid>
 </Window>
